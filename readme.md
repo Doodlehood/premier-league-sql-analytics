@@ -1,10 +1,19 @@
 # Premier League Analytics System
 
-A MySQL database project that models and analyzes English Premier League team and player performance data — teams, players, stadiums, matches, and per-match performance stats.
+A relational database system built in MySQL that models and analyzes Premier League team, player, and match performance data — designed to demonstrate practical database engineering skills: schema design, normalization, referential integrity, and analytical querying.
+
+## Skills Demonstrated
+
+- **Relational schema design** — 5 normalized tables with clear entity boundaries
+- **Referential integrity** — primary/foreign key constraints across all relationships
+- **SQL joins** — multi-table INNER JOINs for cross-entity reporting
+- **Aggregate functions & GROUP BY** — statistical summaries (totals, averages)
+- **Views** — reusable query abstraction (`PlayerPerformance`)
+- **Sample data modeling** — realistic seed data reflecting real-world entities
 
 ## Overview
 
-This project was built as a Database Systems lab exercise. It demonstrates core relational database concepts: table design, primary/foreign keys, joins, views, and aggregate functions, applied to a football (soccer) analytics use case.
+The system tracks clubs, players, stadiums, fixtures, and per-match performance statistics in a single normalized database, replacing manual/spreadsheet-based tracking with structured, queryable storage.
 
 ## Database Schema
 
@@ -22,40 +31,35 @@ This project was built as a Database Systems lab exercise. It demonstrates core 
 - One `MatchDetails` → many `Performance` records
 - One `Player` → many `Performance` records
 
-A `PlayerPerformance` view joins `Player` and `Performance` for quick reporting.
-
 ## Requirements
 
 - MySQL Server 8.0+ (or MySQL Workbench / XAMPP / MAMP)
-- VS Code with the **MySQL** or **SQLTools** extension (optional, for running queries in-editor)
+- VS Code with the **MySQL** or **SQLTools** extension (optional)
 
-## Setup / Usage
-
-1. Clone this repository.
-2. Open `PremierLeagueAnalytics.sql` in MySQL Workbench, the MySQL CLI, or VS Code.
-3. Run the full script — it creates the `PremierLeagueAnalytics` database, all tables, sample data, the view, and a set of demo queries.
+## Setup
 
 ```bash
 mysql -u root -p < PremierLeagueAnalytics.sql
 ```
 
-## Sample Queries Included
+This single script creates the database, all tables, sample data, the reporting view, and runs a set of demonstration queries.
 
-- List all players, teams, stadiums, matches, and performances
-- Team-wise player rosters
-- Match details with home/away teams and venue
-- Total goals scored per player
-- Average player rating across all matches
-- Full `PlayerPerformance` view output
+## Example Queries
 
-## Future Enhancements
+- Team-wise player rosters (JOIN)
+- Match details with home/away teams and venue (multi-table JOIN)
+- Total goals scored per player (aggregate + GROUP BY)
+- Average player rating across all matches (aggregate)
+- Full performance report via the `PlayerPerformance` view
 
-- Real-time match tracking
-- Mobile application integration
-- AI-based performance prediction
-- Graphical dashboard
-- Injury management system
+## Potential Extensions
+
+- Real-time match tracking via API integration
+- Mobile application front-end
+- Predictive analytics (ML-based performance forecasting)
+- Dashboard/BI layer (e.g. Power BI, Tableau connection)
 
 ## Author
 
-Azan Waseem — BSCS, University of Management and Technology (UMT), Lahore
+**Azan Waseem** — BSCS student, University of Management and Technology (UMT), Lahore
+[LinkedIn] · [GitHub] · [Portfolio]
