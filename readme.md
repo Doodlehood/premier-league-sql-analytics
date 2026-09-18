@@ -62,4 +62,3 @@ This single script creates the database, all tables, sample data, the reporting 
 ## Author
 
 **Azan Waseem** — BSCS student, University of Management and Technology (UMT), Lahore
-[LinkedIn] · [GitHub] · [Portfolio]
